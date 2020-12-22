@@ -6,7 +6,10 @@
 
 # Ignore bundler config.
 /.bundle
-vendor/bundle
+/vendor/*
+!/vendor/assets/stylesheets/.keep
+!/vendor/assets/javascripts/.keep
+
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -91,3 +94,5 @@ app/javascript/generated_stories/
 # Cypress test run artifacts
 cypress/videos
 cypress/screenshots
+
+*.gem
