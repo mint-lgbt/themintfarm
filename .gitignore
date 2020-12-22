@@ -96,3 +96,5 @@ cypress/videos
 cypress/screenshots
 
 *.gem
+
+config/database.yml

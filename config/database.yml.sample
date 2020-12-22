@@ -24,6 +24,10 @@ default: &default
   checkout_timeout: 2
   variables:
       statement_timeout: <%= ENV.fetch('STATEMENT_TIMEOUT', 2500).to_i %>
+  username: deploy
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: localhost
+  port: 5432
 
 development:
   <<: *default
@@ -36,19 +40,19 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: PracticalDeveloper
+  username: deploy
 
   # The password associated with the postgres role (username).
-  #password:
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
+  host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -90,7 +94,5 @@ test:
 #
 production:
   <<: *default
-  database: PracticalDeveloper_production
-  pool: <%= ENV['DATABASE_POOL_SIZE'] %>
-  username: PracticalDeveloper
-  password: <%= ENV['PRACTICALDEVELOPER_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  database: themintfarm
