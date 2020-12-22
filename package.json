@@ -1,10 +1,10 @@
 {
-  "name": "dev.to",
+  "name": "themintfarm",
   "version": "1.0.0",
   "description": "Where programmers share ideas and help each other grow",
   "engines": {
     "yarn": ">=1.21.x",
-    "node": "14.14.x"
+    "node": "15.4.x"
   },
   "main": "index.js",
   "directories": {
@@ -79,14 +79,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thepracticaldev/dev.to.git"
+    "url": "git+https://github.com/lunaisnotaboy/themintfarm.git"
   },
   "author": "",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/thepracticaldev/dev.to/issues"
+    "url": "https://github.com/lunaisnotaboy/themintfarm/issues"
   },
-  "homepage": "https://github.com/thepracticaldev/dev.to#readme",
+  "homepage": "https://github.com/lunaisnotaboy/themintfarm#readme",
   "devDependencies": {
     "@knapsack-pro/cypress": "^4.2.0",
     "@stoplight/spectral": "5.7.2",
