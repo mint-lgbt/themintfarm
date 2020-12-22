@@ -15,7 +15,7 @@ module URL
   end
 
   def self.url(uri = nil)
-    base_url = "#{protocol}#{domain}"
+    base_url = "https://#{domain}"
     return base_url unless uri
 
     URI.parse(base_url).merge(uri).to_s

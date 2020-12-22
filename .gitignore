@@ -98,3 +98,4 @@ cypress/screenshots
 *.gem
 
 config/database.yml
+config/initializers/cloudinary.rb
