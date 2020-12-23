@@ -34,6 +34,7 @@ gem "ddtrace", "~> 0.43.0" # ddtrace is Datadog’s tracing client for Ruby.
 gem "devise", "~> 4.7" # Flexible authentication solution for Rails
 gem "devise_invitable", "~> 2.0.3" # Allows invitations to be sent for joining
 gem "dogstatsd-ruby", "~> 4.8" # A client for DogStatsD, an extension of the StatsD metric server for Datadog
+gem 'dotenv-rails'
 gem "doorkeeper", "~> 5.4" # Oauth 2 provider
 gem "ed25519"
 gem "elasticsearch", "~> 7.10" # Powers DEVs core search functionality
@@ -141,7 +142,6 @@ group :development, :test do
   gem "amazing_print", "~> 1.2" # Great Ruby debugging companion: pretty print Ruby objects to visualize their structure
   gem "bullet", "~> 6.1" # help to kill N+1 queries and unused eager loading
   gem "capybara", "~> 3.34" # Capybara is an integration testing tool for rack based web applications
-  gem "dotenv-rails", "~> 2.7.6" # For loading ENV variables locally
   gem "faker", "~> 2.15" # A library for generating fake data such as names, addresses, and phone numbers
   gem "knapsack_pro", "~> 2.10.1" # Help parallelize Ruby spec builds
   gem "pry-byebug", "~> 3.8" # Combine 'pry' with 'byebug'. Adds 'step', 'next', 'finish', 'continue' and 'break' commands to control execution

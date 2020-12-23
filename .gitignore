@@ -99,3 +99,4 @@ cypress/screenshots
 
 config/database.yml
 config/initializers/cloudinary.rb
+/config/master.key

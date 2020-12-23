@@ -18,7 +18,7 @@ class SiteConfig < RailsSettings::Base
 
   # Core setup
   field :waiting_on_first_user, type: :boolean, default: !User.exists?
-  field :app_domain, type: :string, default: ApplicationConfig["APP_DOMAIN"]
+  field :app_domain, type: :string, default: ENV["APP_DOMAIN"]
 
   # API Tokens
   field :health_check_token, type: :string
@@ -32,10 +32,10 @@ class SiteConfig < RailsSettings::Base
   field :require_captcha_for_email_password_registration, type: :boolean, default: false
   field :authentication_providers, type: :array, default: %w[]
   field :invite_only_mode, type: :boolean, default: false
-  field :twitter_key, type: :string, default: ApplicationConfig["TWITTER_KEY"]
-  field :twitter_secret, type: :string, default: ApplicationConfig["TWITTER_SECRET"]
-  field :github_key, type: :string, default: ApplicationConfig["GITHUB_KEY"]
-  field :github_secret, type: :string, default: ApplicationConfig["GITHUB_SECRET"]
+  field :twitter_key, type: :string, default: ENV["TWITTER_KEY"]
+  field :twitter_secret, type: :string, default: ENV["TWITTER_SECRET"]
+  field :github_key, type: :string, default: ENV["GITHUB_KEY"]
+  field :github_secret, type: :string, default: ENV["GITHUB_SECRET"]
   field :facebook_key, type: :string
   field :facebook_secret, type: :string
   field :apple_client_id, type: :string
@@ -53,7 +53,7 @@ class SiteConfig < RailsSettings::Base
   field :campaign_articles_require_approval, type: :boolean, default: 0
 
   # Community Content
-  field :community_name, type: :string, default: ApplicationConfig["COMMUNITY_NAME"] || "New Forem"
+  field :community_name, type: :string, default: ENV["COMMUNITY_NAME"] || "New Forem"
   field :community_emoji, type: :string, default: "🌱"
   field :collective_noun, type: :string, default: "Community"
   field :collective_noun_disabled, type: :boolean, default: false
@@ -69,11 +69,11 @@ class SiteConfig < RailsSettings::Base
 
   # Emails
   field :email_addresses, type: :hash, default: {
-    default: ApplicationConfig["DEFAULT_EMAIL"],
-    contact: ApplicationConfig["DEFAULT_EMAIL"],
-    business: ApplicationConfig["DEFAULT_EMAIL"],
-    privacy: ApplicationConfig["DEFAULT_EMAIL"],
-    members: ApplicationConfig["DEFAULT_EMAIL"]
+    default: ENV["DEFAULT_EMAIL"],
+    contact: ENV["DEFAULT_EMAIL"],
+    business: ENV["DEFAULT_EMAIL"],
+    privacy: ENV["DEFAULT_EMAIL"],
+    members: ENV["DEFAULT_EMAIL"]
   }
 
   # Email digest frequency
@@ -85,11 +85,11 @@ class SiteConfig < RailsSettings::Base
   field :display_jobs_banner, type: :boolean, default: false
 
   # Google Analytics Tracking ID, e.g. UA-71991000-1
-  field :ga_tracking_id, type: :string, default: ApplicationConfig["GA_TRACKING_ID"]
+  field :ga_tracking_id, type: :string, default: ENV["GA_TRACKING_ID"]
 
   # Google ReCATPCHA keys
-  field :recaptcha_site_key, type: :string, default: ApplicationConfig["RECAPTCHA_SITE"]
-  field :recaptcha_secret_key, type: :string, default: ApplicationConfig["RECAPTCHA_SECRET"]
+  field :recaptcha_site_key, type: :string, default: ENV["RECAPTCHA_SITE"]
+  field :recaptcha_secret_key, type: :string, default: ENV["RECAPTCHA_SECRET"]
 
   # Images
   field :main_social_image, type: :string, default: proc { URL.local_image("social-media-cover.png") }
@@ -121,13 +121,13 @@ class SiteConfig < RailsSettings::Base
 
   # Monetization
   field :payment_pointer, type: :string
-  field :stripe_api_key, type: :string, default: ApplicationConfig["STRIPE_SECRET_KEY"]
-  field :stripe_publishable_key, type: :string, default: ApplicationConfig["STRIPE_PUBLISHABLE_KEY"]
+  field :stripe_api_key, type: :string, default: ENV["STRIPE_SECRET_KEY"]
+  field :stripe_publishable_key, type: :string, default: ENV["STRIPE_PUBLISHABLE_KEY"]
   field :shop_url, type: :string
 
   # Newsletter
   # <https://mailchimp.com/developer/>
-  field :mailchimp_api_key, type: :string, default: ApplicationConfig["MAILCHIMP_API_KEY"]
+  field :mailchimp_api_key, type: :string, default: ENV["MAILCHIMP_API_KEY"]
   field :mailchimp_newsletter_id, type: :string, default: ""
   field :mailchimp_sustaining_members_id, type: :string, default: ""
   field :mailchimp_tag_moderators_id, type: :string, default: ""

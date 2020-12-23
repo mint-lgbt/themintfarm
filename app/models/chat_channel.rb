@@ -1,3 +1,4 @@
+require "base64"
 class ChatChannel < ApplicationRecord
   attr_accessor :current_user, :usernames_string, :username_string
 
@@ -171,7 +172,7 @@ class ChatChannel < ApplicationRecord
   end
 
   def self.urlsafe_encoded_app_domain
-    Base64.urlsafe_encode64(ApplicationConfig["APP_DOMAIN"])
+    Base64.urlsafe_encode64(ENV["APP_DOMAIN"])
   end
 
   private

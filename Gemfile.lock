@@ -885,7 +885,7 @@ DEPENDENCIES
   devise_invitable (~> 2.0.3)
   dogstatsd-ruby (~> 4.8)
   doorkeeper (~> 5.4)
-  dotenv-rails (~> 2.7.6)
+  dotenv-rails
   ed25519
   elasticsearch (~> 7.10)
   email_validator (~> 2.2)

@@ -14,8 +14,8 @@ COMPONENT_FINGERPRINTS = {
 
 # https://docs.honeybadger.io/lib/ruby/gem-reference/configuration.html
 Honeybadger.configure do |config|
-  config.env = "#{ApplicationConfig['APP_DOMAIN']}-#{Rails.env}"
-  config.api_key = ApplicationConfig["HONEYBADGER_API_KEY"]
+  config.env = "#{ENV['APP_DOMAIN']}-#{Rails.env}"
+  config.api_key = ENV["HONEYBADGER_API_KEY"]
   config.revision = ApplicationConfig["RELEASE_FOOTPRINT"]
 
   # Prevent Ruby from exiting until all queued notices have been delivered to Honeybadger.

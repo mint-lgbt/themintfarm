@@ -31,7 +31,7 @@ module ReCaptcha
     private
 
     def keys_configured?
-      SiteConfig.recaptcha_site_key.present? && SiteConfig.recaptcha_secret_key.present?
+      true
     end
   end
 end
